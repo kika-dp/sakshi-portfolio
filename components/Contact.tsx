@@ -66,7 +66,7 @@ export default function Contact() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(20,184,166,0.06), transparent)",
+            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(43,163,156,0.08), transparent)",
         }}
       />
       <div className="container-xl">

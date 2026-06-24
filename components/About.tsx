@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, Globe, Languages } from "lucide-react";
+import { Quote, Globe, Languages, BadgeCheck } from "lucide-react";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import cv from "@/lib/cv-data";
 import SectionHeader from "./SectionHeader";
@@ -32,13 +32,27 @@ export default function About() {
               <motion.p
                 key={i}
                 variants={fadeUp}
-                className={`text-[15px] leading-relaxed sm:text-base ${
-                  i === 0 ? "text-[var(--text)]" : "text-muted"
-                } ${i > 0 ? "mt-5" : ""}`}
+                className={`leading-relaxed ${
+                  i === 0
+                    ? "text-lg font-medium text-[var(--text)] sm:text-xl"
+                    : "text-muted mt-5 text-[15px] sm:text-base"
+                }`}
               >
                 {para}
               </motion.p>
             ))}
+
+            <motion.div variants={fadeUp} className="mt-7 flex flex-wrap gap-2.5">
+              {cv.about.facts.map((f) => (
+                <span
+                  key={f}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1.5 text-xs font-semibold text-accent"
+                >
+                  <BadgeCheck className="h-3.5 w-3.5" />
+                  {f}
+                </span>
+              ))}
+            </motion.div>
 
             <motion.div
               variants={fadeUp}

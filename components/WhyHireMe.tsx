@@ -25,28 +25,40 @@ export default function WhyHireMe() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
         >
           {cv.whyHireMe.map((item, i) => (
             <motion.div
               key={item.title}
               variants={fadeUp}
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative overflow-hidden rounded-3xl border bg-gradient-to-br from-[var(--bg-soft)] to-transparent p-7 shadow-card"
+              className="group relative"
             >
-              <span className="font-display absolute right-5 top-4 text-5xl font-bold text-accent/10 transition-colors group-hover:text-accent/20">
-                0{i + 1}
+              {/* Numbered step badge straddling the card top */}
+              <span className="font-display absolute -top-6 left-7 z-10 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-highlight text-base font-bold text-white shadow-glow">
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-highlight text-white shadow-glow">
-                <Icon name={item.icon} className="h-6 w-6" />
-              </span>
-              <h3 className="font-display mt-5 text-lg font-bold">
-                {item.title}
-              </h3>
-              <p className="text-muted mt-2 text-sm leading-relaxed">
-                {item.detail}
-              </p>
+
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="glass relative h-full overflow-hidden rounded-3xl px-7 pb-7 pt-10 shadow-card"
+              >
+                {/* Gradient accent rail on top */}
+                <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-highlight to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent/15 to-highlight/15 text-accent transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={item.icon} className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display text-lg font-bold leading-tight">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <p className="text-muted mt-4 text-sm leading-relaxed">
+                  {item.detail}
+                </p>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

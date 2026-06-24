@@ -3,21 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f8fafc;
+  /* Ocean Pearl Delight — light */
+  --bg: #edf4f4;
   --bg-soft: #ffffff;
-  --text: #111827;
-  --muted: #475569;
-  --border: rgba(15, 23, 42, 0.08);
+  --text: #0e3a3e;
+  --muted: #4a6e6c;
+  --border: rgba(14, 95, 99, 0.12);
   --card: rgba(255, 255, 255, 0.7);
 }
 
 .dark {
-  --bg: #0f172a;
-  --bg-soft: #111c33;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --border: rgba(148, 163, 184, 0.14);
-  --card: rgba(30, 41, 59, 0.55);
+  /* Ocean Pearl Delight — dark (deep teal canvas) */
+  --bg: #07292e;
+  --bg-soft: #0c3a40;
+  --text: #e6f0ee;
+  --muted: #8fb0ad;
+  --border: rgba(134, 196, 185, 0.14);
+  --card: rgba(12, 58, 64, 0.55);
 }
 
 * {
@@ -39,7 +41,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(20, 184, 166, 0.25);
+  background: rgba(134, 196, 185, 0.3);
 }
 
 /* Custom scrollbar */
@@ -50,7 +52,7 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #14b8a6, #38bdf8);
+  background: linear-gradient(180deg, #2ba39c, #d2886a);
   border-radius: 999px;
   border: 2px solid var(--bg);
 }
@@ -76,7 +78,7 @@ body {
   }
 
   .gradient-text {
-    background: linear-gradient(120deg, #14b8a6 0%, #38bdf8 60%, #0ea5e9 100%);
+    background: linear-gradient(120deg, #2ba39c 0%, #86c4b9 45%, #d2886a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -84,7 +86,7 @@ body {
 
   .eyebrow {
     @apply inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent;
-    background: rgba(20, 184, 166, 0.08);
+    background: rgba(43, 163, 156, 0.1);
   }
 
   .btn-primary {

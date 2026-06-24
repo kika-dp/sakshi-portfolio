@@ -60,9 +60,13 @@ const cv = {
   // ─── About ─────────────────────────────────────────────────
   about: {
     narrative: [
-      "I am an accounting and finance professional who treats clean books as the foundation of confident decisions. Over the past four years I have moved from end-to-end bookkeeping into specialised Australian tax compliance — preparing and lodging BAS and IAS, running Single Touch Payroll, and keeping organisations squarely on the right side of the ATO.",
-      "My edge is the intersection of compliance discipline and automation. I work fluently across cloud ERPs like Xero, MYOB, QuickBooks, Zoho Books and NetSuite, and I lean on tools like Dext, Hubdoc and Fathom to compress reporting timelines and remove manual error. The result is faster month-ends, audit-ready documentation, and management reporting leaders can actually act on.",
-      "I believe finance should be a source of clarity, not friction. Whether reconciling ledgers, forecasting cash flow, or building KPI dashboards, my goal is the same: accurate numbers, delivered on time, explained simply.",
+      "An accounting and finance professional with 4+ years specialising in Australian tax compliance — BAS, IAS and Single Touch Payroll — keeping organisations audit-ready and squarely on the right side of the ATO.",
+      "My edge is compliance discipline paired with automation: fluent across cloud ERPs like Xero, MYOB and QuickBooks, I compress month-ends and turn the ledger into reporting leaders can act on.",
+    ],
+    facts: [
+      "4+ years experience",
+      "Australian tax compliance",
+      "Cloud ERP & automation",
     ],
     philosophy:
       "Accuracy first, automation always, and insight that leadership can act on.",

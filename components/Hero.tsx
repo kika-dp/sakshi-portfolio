@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Download, Mail, MapPin, Sparkles } from "lucide-react";
+import { Download, Mail, MapPin, Sparkles, ShieldCheck } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/motion";
 import cv, { stats } from "@/lib/cv-data";
 import Counter from "./Counter";
@@ -116,44 +116,39 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="relative mx-auto w-full max-w-sm"
         >
-          <div className="absolute inset-0 -z-10 animate-float rounded-full bg-gradient-to-tr from-accent/30 to-highlight/30 blur-2xl" />
+          <div className="absolute inset-0 -z-10 animate-float rounded-[2rem] bg-gradient-to-tr from-accent/30 to-highlight/30 blur-2xl" />
 
-          <div className="group relative mx-auto aspect-square w-full max-w-[360px]">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent to-highlight p-[3px] shadow-glow transition-transform duration-500 group-hover:scale-[1.02]">
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-canvas">
+          <div className="group relative mx-auto aspect-[983/1600] w-full max-w-[340px]">
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-accent to-highlight p-[3px] shadow-glow transition-transform duration-500 group-hover:scale-[1.01]">
+              <div className="relative h-full w-full overflow-hidden rounded-[1.85rem] bg-canvas">
                 <Image
                   src={cv.profileImage}
                   alt={`${cv.name} — ${cv.title}`}
                   fill
                   priority
-                  sizes="(max-width: 768px) 320px, 360px"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 320px, 340px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
+                {/* Subtle bottom scrim keeps the floating badge legible over the photo */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/45 to-transparent" />
               </div>
             </div>
 
-            {/* Floating badges */}
+            {/* Single consolidated credential badge — the strongest professional identifier */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="glass absolute -left-2 top-10 rounded-2xl px-4 py-3 shadow-soft sm:-left-6"
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="glass absolute -right-2 bottom-8 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-soft sm:-right-5"
             >
-              <div className="text-xs font-semibold">BAS / IAS</div>
-              <div className="text-muted text-[10px]">ATO Compliant</div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 4.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="glass absolute -right-2 bottom-12 rounded-2xl px-4 py-3 shadow-soft sm:-right-6"
-            >
-              <div className="text-xs font-semibold gradient-text">Xero · MYOB</div>
-              <div className="text-muted text-[10px]">Cloud ERP Expert</div>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-highlight text-white shadow-glow">
+                <ShieldCheck className="h-5 w-5" />
+              </span>
+              <div>
+                <div className="text-xs font-semibold leading-tight">
+                  BAS / IAS · STP
+                </div>
+                <div className="text-muted text-[10px]">ATO Compliant</div>
+              </div>
             </motion.div>
           </div>
         </motion.div>
